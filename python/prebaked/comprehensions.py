@@ -1,4 +1,4 @@
-# comprehensions_sol.py
+# comprehensions.py
 
 # TODO 1 Write a program that sets the variable named result to be the list [1,
 # 2, 3, 4, 5]. Use a loop to add the numbers.

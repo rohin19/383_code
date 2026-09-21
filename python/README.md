@@ -456,8 +456,7 @@ matrix = [[1, 2], [3, 4], [5, 6]]
 transposed = [list(row) for row in zip(*matrix)]
 ```
 
-The expression `zip(*matrix)` is, in this example, the same as `zip([1, 2], [3,
-4], [5, 6])`. The `*` operator *unpacks* the elements of `matrix` into its
+The expression `zip(*matrix)` is, in this example, the same as `zip([1, 2], [3, 4], [5, 6])`. The `*` operator *unpacks* the elements of `matrix` into its
 individual lists and passes them to `zip` as separate arguments (`zip` can take
 any number of lists). `zip([1, 2], [3, 4], [5, 6])` yields these values:
 
@@ -492,8 +491,7 @@ list. You can get those like this:
 2 c
 ```
 
-This is a common enough operation that Python provides a built-in function,
-`enumerate`, that does this for you:
+This is a common enough that Python provides `enumerate`:
 
 ```python
 >>> for i, value in enumerate(lst):
@@ -526,9 +524,8 @@ print(get_min([3, 2, 4, 1, 5])) # (1, 3)
 ### Iterators
 
 In general, an **iterator** is an object that returns values. In practice, it is
-often used to give sequential access to a collection of objects. A Python
-iterator is essentially an object that has "next" method that you call to get the
-next element from the iterator. 
+often used to give sequential access to the objects in a collection (like a
+list, or a tree).
 
 Let's build our own iterator as an example (we'll see shortly how to make it an
 official Python iterator):
@@ -582,7 +579,7 @@ all the letters have returned, it crashes. And crashing is never a good thing!
 Note that `Counter` *doesn't* crash: it has no end. `Counter` is an example of
 an **endless iterator**, or an **infinite iterator**.
 
-To deal with iterators that are done (i.e. have no more elements to return),
+To deal with iterators that do stop (i.e. have no more elements to return),
 Python uses the `StopIteration` exception. The idea is that if `next` is called
 when the iterator is done, it raises a `StopIteration` exception. We can modify
 `Letters` like this:
@@ -611,7 +608,7 @@ print(letters.next()) # 't'
 print(letters.next()) # StopIteration exception
 ```
 
-It still crashes, but now we know that it will raise `StopIteration`.
+It still crashes, but in a controlled with by rasing `StopIteration`.
 
 ### Making Iterators with `__iter__` and `__next__`
 
@@ -1385,6 +1382,10 @@ print(factorial(5))
 
 [This video](https://www.youtube.com/watch?v=3tyaO-OE0K0) gives a similar
 explanation of decorators.
+
+**Practice Activity** 
+
+[Do the following practice activities](python_practice.md).
 
 ## Context Managers
 
