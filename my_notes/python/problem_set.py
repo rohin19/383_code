@@ -299,3 +299,13 @@ print(calculate_area(("rectangle", 4, 6))) # 24
 print(calculate_area(("triangle", 3, 8)))  # 12.0
 print(calculate_area(("square", 7)))       # 49
 print(calculate_area(("hexagon", 4)))      # Unknown shape
+
+def reverse_enumerate(L):
+    i = len(L) - 1
+    while i >= 0:
+        yield L[i], i
+        i -= 1
+
+words = ["cat", "dog", "apple", "bananna"]
+for value in reverse_enumerate(words):
+    print(value)
